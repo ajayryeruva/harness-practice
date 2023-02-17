@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: regapp:latest
+          image: ajayyeruva18/regapp:latest
           imagePullPolicy: Always
           resources:
             requests:
