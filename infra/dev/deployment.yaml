@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpd
+  name: regapp
   namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: httpd
+      app: regapp
   template:
     metadata:
       labels:
-        app: httpd
+        app: regapp
     spec:
       containers:
         - name: app
-          image: httpd:latest
+          image: regapp:latest
           imagePullPolicy: Always
           resources:
             requests:
@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd
+  name: regapp
   namespace: dev
 spec:
   ports:
@@ -49,6 +49,6 @@ spec:
       protocol: TCP
   type: NodePort
   selector:
-    app: httpd
+    app: regapp
 ---
 
