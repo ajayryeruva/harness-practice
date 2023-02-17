@@ -13,6 +13,8 @@ spec:
       labels:
         app: regapp
     spec:
+      imagePullSecrets:
+        - name: myregistrykey
       containers:
         - name: app
           image: ajayyeruva18/regapp:latest
